@@ -1,0 +1,31 @@
+ALGORITHM analyze_sentence
+VAR
+    str : STRING : = "The best in the world.";
+    char_count : INTEGER : = 0;
+    word_count : INTEGER : = 0;
+    vowel_count : INTEGER : = 0;
+    vowels : CHAR : = ['a','e','i','o','u','y','A','E','I','O','U','Y'];
+BEGIN
+    
+    FOR (int i = 0; i < length(str); i++) DO
+        
+        IF (str[i] != ' ') THEN
+            char_count += 1;
+        END_IF
+
+        
+        IF (str[i] == ' ' || str[i] == '.') THEN
+            word_count += 1;
+        END_IF
+
+        
+        IF (str[i] in vowels) THEN
+            vowel_count += 1;
+        END_IF
+    END_FOR
+
+    
+    Write("Number of characters: ", char_count);
+    Write("Number of words: ", word_count);
+    Write("Number of vowels: ", vowel_count);
+END
